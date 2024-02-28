@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Cool Site To show</title>
+		<style>
+			.card {
+				border: 1px solid #ededed;
+				padding: 1rem;
+			}
+			.site-wrapper {
+				max-width: 800px;
+				margin: 0 auto;
+				display: grid;
+				gap: 1rem;
+			}
+			.flow * + * {
+				margin-block-start: 1rem;
+			}
+			</style>
+	<body>
+		<div class="site-wrapper">
+		{% for item in carddata.cards %}
+			<div class="card flow">
+				<h3>{{item.title}}</h3>
+				<p>{{item.text}}</p>
+				<button>{{item.button}}</button>
+			</div>
+		{%endfor%}
+		</div>
+	</body>
+</html>
